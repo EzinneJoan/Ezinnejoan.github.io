@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ezinne Nwodo — Social Media Marketing Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F4;
+    --warm-white: #FFFFFF;
+    --ink: #1A1814;
+    --ink-light: #4A4640;
+    --ink-muted: #9A9590;
+    --blush: #E8D5C4;
+    --blush-deep: #C4977A;
+    --sage: #B8C4B2;
+    --border: #E8E4DE;
+    --accent: #8B6F5C;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-left {
+    background: var(--warm-white);
+    padding: 5rem 4rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--blush-deep);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--blush-deep);
+  }
+
+  .hero-bio {
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.75rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 0.75rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  .hero-right {
+    background: var(--blush);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: 'EN';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: -4rem;
+    right: -2rem;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-item {
+    background: rgba(255,255,255,0.5);
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 0; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--blush-deep);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 3rem;
+    color: var(--ink);
+  }
+
+  .section-title em { font-style: italic; color: var(--blush-deep); }
+
+  /* SERVICES */
+  #services { background: var(--warm-white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--warm-white);
+    padding: 2rem 1.75rem;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .service-card:hover { background: var(--cream); }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+
+  .service-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--cream); }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .exp-sidebar { position: sticky; top: 80px; }
+
+  .exp-sidebar p {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tool-pill {
+    font-size: 12px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    color: var(--ink-light);
+    letter-spacing: 0.03em;
+  }
+
+  .exp-entries { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-entry {
+    border-left: 1px solid var(--border);
+    padding: 0 0 3rem 2rem;
+    position: relative;
+  }
+
+  .exp-entry::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blush-deep);
+    position: absolute;
+    left: -4.5px;
+    top: 6px;
+  }
+
+  .exp-entry:last-child { padding-bottom: 0; }
+
+  .exp-date {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-bullets li {
+    font-size: 13.5px;
+    color: var(--ink-light);
+    line-height: 1.65;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--blush-deep);
+    font-weight: 300;
+  }
+
+  /* CASE STUDY */
+  #casestudy {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  #casestudy .section-label { color: var(--blush); }
+  #casestudy .section-label::before { background: var(--blush); }
+  #casestudy .section-title { color: var(--cream); }
+  #casestudy .section-title em { color: var(--blush); }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .case-desc {
+    font-size: 14px;
+    color: rgba(250,248,244,0.7);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-challenge {
+    border-left: 2px solid var(--blush-deep);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .case-challenge-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 0.5rem;
+  }
+
+  .case-challenge p {
+    font-size: 13.5px;
+    color: rgba(250,248,244,0.65);
+    line-height: 1.7;
+  }
+
+  .case-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    align-self: start;
+  }
+
+  .result-item {
+    background: rgba(255,255,255,0.04);
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .result-item:hover { background: rgba(255,255,255,0.08); }
+
+  .result-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--blush);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .result-label {
+    font-size: 12px;
+    color: rgba(250,248,244,0.55);
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  /* WORKS / PAGES */
+  #works { background: var(--warm-white); }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    border: 1px solid var(--border);
+    background: var(--cream);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .work-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
+
+  .work-card-header {
+    background: var(--blush);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-card-header .wc-initial {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    position: absolute;
+    bottom: -0.5rem;
+    right: 1rem;
+    line-height: 1;
+  }
+
+  .work-card-header .wc-platform {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.6);
+    color: var(--accent);
+    padding: 0.3rem 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .work-card-body { padding: 1.5rem; }
+
+  .work-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .work-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .work-card-link {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+
+  .work-card-link:hover { gap: 0.7rem; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--cream); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-placeholder {
+    border: 1px dashed var(--border);
+    background: rgba(255,255,255,0.5);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 180px;
+    gap: 0.75rem;
+  }
+
+  .testimonial-placeholder p {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+
+  .testimonial-placeholder span {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    opacity: 0.6;
+  }
+
+  /* CERTIFICATIONS */
+  #certifications { background: var(--warm-white); }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .cert-card {
+    background: var(--warm-white);
+    padding: 1.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .cert-card:hover { background: var(--cream); }
+
+  .cert-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blush-deep);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .cert-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .cert-issuer {
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 7rem 2rem;
+  }
+
+  #contact .section-label { justify-content: center; color: var(--blush); }
+  #contact .section-label::before { background: var(--blush); }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-title em { font-style: italic; color: var(--blush); }
+
+  .contact-sub {
+    font-size: 14px;
+    color: rgba(250,248,244,0.55);
+    margin-bottom: 3rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .contact-link {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+  .contact-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  .contact-email {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--blush);
+    text-decoration: none;
+    font-weight: 300;
+    transition: opacity 0.2s;
+  }
+
+  .contact-email:hover { opacity: 0.7; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(250,248,244,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 280px; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { padding: 2rem 1.5rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-sidebar { position: static; }
+    .case-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li:nth-child(n+4) { display: none; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ezinne Nwodo</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#casestudy">Case Study</a></li>
+    <li><a href="#works">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Social Media Marketing Manager</div>
+    <h1 class="hero-name">Ezinne<br><em>Nwodo</em></h1>
+    <p class="hero-bio">
+      Strategic brand communications professional with 3+ years of experience leading multi-channel campaigns, growing digital audiences, and turning content into measurable results. Currently advancing expertise with an MBA at Lagos Business School.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:zinnynwodo@gmail.com" class="btn-primary">Get in Touch</a>
+      <a href="#works" class="btn-outline">View Work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years of experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1,500+</div>
+        <div class="stat-label">Program registrations driven</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">₦3.2M</div>
+        <div class="stat-label">Grant funding secured</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">400+</div>
+        <div class="stat-label">Newsletter subscribers built</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label fade-in">What I offer</div>
+    <h2 class="section-title fade-in">Services &amp; <em>Expertise</em></h2>
+    <div class="services-grid fade-in">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="service-name">Social Media Strategy</div>
+        <div class="service-desc">Building data-driven strategies that grow audiences, boost engagement, and align with business goals.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="service-name">Content Creation</div>
+        <div class="service-desc">Creating compelling visual and written content — from short-form video to graphics and long-form copy.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="service-name">Community Management</div>
+        <div class="service-desc">Nurturing online communities, managing conversations, and building authentic brand relationships.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="service-name">Copywriting &amp; Email</div>
+        <div class="service-desc">Writing persuasive copy for ads, emails, newsletters, and blog content that converts and engages.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="service-name">Analytics &amp; Reporting</div>
+        <div class="service-desc">Tracking performance metrics, extracting insights, and using data to continuously improve results.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.05 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        </div>
+        <div class="service-name">Paid Advertising</div>
+        <div class="service-desc">Running targeted paid campaigns for awareness, lead generation, and program visibility across platforms.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label fade-in">Career journey</div>
+    <h2 class="section-title fade-in">Work <em>Experience</em></h2>
+    <div class="exp-grid">
+
+      <div class="exp-sidebar fade-in">
+        <p>Strategic communicator with a background in Biomedical Engineering, 3+ years in digital marketing, and an MBA in progress at Lagos Business School.</p>
+        <div class="section-label" style="margin-bottom: 0.75rem;">Tools I use</div>
+        <div class="tools-list">
+          <span class="tool-pill">Meta Business Suite</span>
+          <span class="tool-pill">Google Analytics</span>
+          <span class="tool-pill">Hootsuite</span>
+          <span class="tool-pill">Buffer</span>
+          <span class="tool-pill">Canva</span>
+          <span class="tool-pill">CapCut</span>
+        </div>
+      </div>
+
+      <div class="exp-entries fade-in">
+
+        <div class="exp-entry">
+          <div class="exp-date">Nov 2022 – Mar 2026</div>
+          <div class="exp-role">Communications Lead</div>
+          <div class="exp-company">Knowledge Exchange Centre (KEC) · Victoria Island, Lagos</div>
+          <ul class="exp-bullets">
+            <li>Led brand and communications strategy across digital platforms, aligning campaigns with growth, engagement, and visibility objectives.</li>
+            <li>Grew social media audience from 370 to 900+ followers through consistent content strategy and community engagement.</li>
+            <li>Increased audience engagement by 20% through targeted storytelling and performance-led improvements.</li>
+            <li>Managed paid advertising campaigns with a cumulative budget of ₦100,000+ supporting awareness and lead generation.</li>
+            <li>Generated 100+ qualified leads and drove 1,500+ registrations across programs and events.</li>
+            <li>Secured ₦3.2 million in grant funding through compelling proposal writing and strategic communication.</li>
+            <li>Built a newsletter community from 0 to 400+ subscribers in six months.</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-date">Nov 2021 – Oct 2022</div>
+          <div class="exp-role">Executive Assistant</div>
+          <div class="exp-company">Knowledge Exchange Centre (KEC) · Agungi, Lagos</div>
+          <ul class="exp-bullets">
+            <li>Supported executive leadership with presentations, reports, emails, and internal correspondence.</li>
+            <li>Managed day-to-day social media content publishing and audience engagement across key channels.</li>
+            <li>Coordinated volunteers and tracked project progress to improve accountability and timely execution.</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-date">Mar 2020 – Aug 2020</div>
+          <div class="exp-role">Marketing Intern</div>
+          <div class="exp-company">MDASS Global · Lekki Phase 1, Lagos</div>
+          <ul class="exp-bullets">
+            <li>Developed customer communication guidelines for COVID-19 patient interactions.</li>
+            <li>Designed branded social media content to improve digital visibility and awareness.</li>
+            <li>Supported logistics coordination for the setup of additional testing centres.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="container">
+    <div class="section-label fade-in">Featured project</div>
+    <h2 class="section-title fade-in">KEC Nigeria — <em>Case Study</em></h2>
+    <div class="case-grid fade-in">
+
+      <div>
+        <p class="case-desc">Knowledge Exchange Centre (KEC) is a non-profit organization based in Lagos. When I joined as Communications Lead in 2022, the brand had a minimal digital footprint and lacked a structured communications strategy.</p>
+
+        <div class="case-challenge">
+          <div class="case-challenge-label">The Challenge</div>
+          <p>KEC had a small social media audience of around 370 followers, low engagement, no newsletter presence, and no formal strategy for digital growth or grant communication.</p>
+        </div>
+
+        <div class="case-challenge" style="border-color: var(--sage);">
+          <div class="case-challenge-label" style="color: var(--sage);">What I Did</div>
+          <p>I built a full multi-channel communications strategy — covering content, community management, paid advertising, email marketing, and grant writing. I aligned every campaign to KEC's organizational goals, created a consistent brand voice, and produced analytics reports to continuously improve performance.</p>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <div class="result-item">
+          <div class="result-num">143%</div>
+          <div class="result-label">Audience growth<br>(370 → 900+ followers)</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">20%</div>
+          <div class="result-label">Increase in audience engagement</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">100+</div>
+          <div class="result-label">Qualified leads generated</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">1,500+</div>
+          <div class="result-label">Program &amp; event registrations</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">400+</div>
+          <div class="result-label">Newsletter subscribers in 6 months</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">₦3.2M</div>
+          <div class="result-label">Grant funding secured through strategic proposals</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGES MANAGED / WORK -->
+<section id="works">
+  <div class="container">
+    <div class="section-label fade-in">Portfolio</div>
+    <h2 class="section-title fade-in">Pages &amp; <em>Brands Managed</em></h2>
+    <div class="works-grid fade-in">
+
+      <div class="work-card">
+        <div class="work-card-header" style="background: #D4C5B8;">
+          <span class="wc-platform">Instagram + LinkedIn</span>
+          <span class="wc-initial">K</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-name">KEC Nigeria</div>
+          <div class="work-card-desc">Full communications lead — strategy, content, community management, paid ads, and grant writing for a Lagos-based non-profit.</div>
+          <a href="https://www.instagram.com/kec_nigeria" target="_blank" class="work-card-link">View Instagram →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-header" style="background: #C8BFBA;">
+          <span class="wc-platform">Instagram</span>
+          <span class="wc-initial">A</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-name">Artroost Gallery</div>
+          <div class="work-card-desc">Social media management for an art gallery — visual storytelling, content calendar, and audience growth.</div>
+          <a href="https://www.instagram.com/artroostgallery" target="_blank" class="work-card-link">View Instagram →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-header" style="background: #C4C8BF;">
+          <span class="wc-platform">Instagram</span>
+          <span class="wc-initial">C</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-name">CYONCCOA Church</div>
+          <div class="work-card-desc">Community-focused social media management for a church page — consistent publishing and engagement.</div>
+          <a href="https://www.instagram.com/cyonccoa" target="_blank" class="work-card-link">View Instagram →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card-header" style="background: #BFC4CC;">
+          <span class="wc-platform">Personal Brand</span>
+          <span class="wc-initial">E</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-name">Zinny.nw_ (Personal)</div>
+          <div class="work-card-desc">Personal brand page showcasing content creation, marketing insights, and professional storytelling.</div>
+          <a href="https://www.instagram.com/zinny.nw_" target="_blank" class="work-card-link">View Instagram →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label fade-in">Social proof</div>
+    <h2 class="section-title fade-in">What Clients <em>Say</em></h2>
+    <div class="testimonials-grid fade-in">
+      <div class="testimonial-placeholder">
+        <p>"Testimonial coming soon — reach out to add yours."</p>
+        <span>Client · Organization</span>
+      </div>
+      <div class="testimonial-placeholder">
+        <p>"Testimonial coming soon — reach out to add yours."</p>
+        <span>Client · Organization</span>
+      </div>
+      <div class="testimonial-placeholder">
+        <p>"Testimonial coming soon — reach out to add yours."</p>
+        <span>Client · Organization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label fade-in">Credentials</div>
+    <h2 class="section-title fade-in">Education &amp; <em>Certifications</em></h2>
+    <div class="certs-grid fade-in">
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">MBA (In Progress)</div>
+          <div class="cert-issuer">Lagos Business School, Pan-Atlantic University</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">B.Eng in Biomedical Engineering</div>
+          <div class="cert-issuer">Bells University of Technology · 2021</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Grant Master Certification</div>
+          <div class="cert-issuer">Grant Success School · Dec 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Fundamentals of Digital Marketing</div>
+          <div class="cert-issuer">Feb 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-name">Marketing Essentials Certificate</div>
+          <div class="cert-issuer">Jan 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label fade-in">Let's work together</div>
+  <h2 class="contact-title fade-in">Ready to grow your <em>brand?</em></h2>
+  <p class="contact-sub fade-in">Whether you're a startup, a growing business, or an agency — let's talk about what we can build together.</p>
+  <div class="contact-links fade-in">
+    <a href="https://www.linkedin.com/in/ezinne-nwodo-0b3567228/" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://www.instagram.com/zinny.nw_" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="https://x.com/ezinnenwodo1" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+      Twitter / X
+    </a>
+    <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7205875839069040640" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Newsletter
+    </a>
+  </div>
+  <a href="mailto:zinnynwodo@gmail.com" class="contact-email fade-in">zinnynwodo@gmail.com</a>
+</section>
+
+<footer>
+  <span>© 2025 Ezinne Joan Nwodo</span>
+  <span>+234 (0)703 9917 112</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
